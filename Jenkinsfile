@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_URL = 'https://github.com/YOUR-GITHUB-USERNAME/metallb-deploy.git'
+        GITHUB_URL = 'https://github.com/tewelljd-cloud/metallb-deploy.git'
         KUBECONFIG = credentials('tewelljd-fl26')
     }
 
