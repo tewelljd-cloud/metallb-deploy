@@ -1,9 +1,9 @@
 pipeline {
-    agent any 
+    agent any
 
     environment {
-        GITHUB_URL = 'https://github.com/miamioh-cit/metallb-deploy.git'  // <---- Change this to match your cloned repository
-        KUBECONFIG = credentials('cet-advising')   // <---- Change this to match your kubernetes cluster credentials
+        GITHUB_URL = 'https://github.com/YOUR-GITHUB-USERNAME/metallb-deploy.git'
+        KUBECONFIG = credentials('tewelljd-fl26')
     }
 
     stages {
@@ -13,6 +13,7 @@ pipeline {
                           userRemoteConfigs: [[url: "${GITHUB_URL}"]]])
             }
         }
+
         stage('Deploy to Kubernetes Cluster') {
             steps {
                 script {
